@@ -1,0 +1,156 @@
+<!--
+NOTES:
+1. All tokens are represented by '$' sign in the template.
+2. You can write your code only wherever mentioned.
+3. "DO NOT" alter the tokens in the template html as they are required during publishing.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+        <meta charset="UTF-8">
+        <title>Jaxx</title>
+        <!-- write your code here -->
+
+
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                height: 100%;
+                width: 100%;
+/*                overflow: scroll;*/
+                overflow: hidden;
+            }
+
+            body * {
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                -webkit-touch-callout: none;
+                -webkit-user-select: none; /* Disable selection/copy in UIWebView
+                */
+            }
+
+        </style>
+
+        <script src="libs/createjs-2015.11.26.min.js"></script>
+        <script src="introScene.js"></script>
+        <script src="../js/thirdparty/jquery-2.1.4.min.js"></script>
+        <script>
+            var canvas, stage, exportRoot;
+            function init() {
+                // --- write your JS code here ---
+
+                canvas = document.getElementById("canvas");
+                images = images||{};
+
+                var loader = new createjs.LoadQueue(false);
+                loader.addEventListener("fileload", handleFileLoad);
+                loader.addEventListener("complete", handleComplete);
+                loader.loadManifest(lib.properties.manifest);
+            }
+
+            function handleFileLoad(evt) {
+                if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+            }
+
+            function handleComplete(evt) {
+                exportRoot = new lib.introScene();
+
+                stage = new createjs.Stage(canvas);
+                stage.addEventListener("onload", function() {
+                    initAfterLoad();
+                });
+                
+                onResize();
+
+                stage.addChild(exportRoot);
+                stage.update();
+
+                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.addEventListener("tick", stage);
+            }
+
+            function onResize()
+            {
+//                var keepAspectRatio = true;
+
+                var scale = 1.0;
+                
+                // browser viewport size
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+
+                // stage dimensions
+                var ow = 400 * 2;//400; // your stage width
+                var oh = 661 * 2;//661; // your stage height
+
+//                if (keepAspectRatio)
+//                {
+                    // keep aspect ratio
+                    scale = Math.min(w / ow, h / oh);
+//                    stage.scaleX = scale;// * 0.5;
+//                    stage.scaleY = scale;// * 0.5;
+
+                    // adjust canvas size
+                    stage.canvas.width = w;//ow * scale;
+                    stage.canvas.height = h;// * scale;
+//                }
+//                else
+//                {
+//                    // scale to exact fit
+//                    stage.scaleX = w / ow;
+//                    stage.scaleY = h / oh;
+//
+//                    // adjust canvas size
+//                    stage.canvas.width = ow;// * stage.scaleX;
+//                    stage.canvas.height = oh;// * stage.scaleY;
+//                }
+                
+                var offsetX = (w - (ow * scale) > 0) ? (w - (ow * scale)) * 0.5 : 0;
+                var offsetY = (h - (oh * scale) > 0) ? (h - (oh * scale)) * 0.5 : 0;
+
+                //        console.log("< canvas :: " + canvas + " :: " + offsetX + " >");
+
+                canvas.style.marginLeft = "0px";//String(offsetX) + "px";
+                canvas.style.marginTop = "0px";//String(offsetY) + "px";
+
+                // update the stage
+                stage.update();
+                
+                setTimeout(function() {
+                    initAfterLoad(scale, offsetX, offsetY);
+                }, 10);
+            }
+
+            window.onresize = function()
+            {
+                onResize();
+            }
+            
+            function initAfterLoad(scale, offsetX, offsetY) {
+                exportRoot.bridgy.setScale(scale * 0.5);
+//                exportRoot.bridgy.setScale(scale);
+                exportRoot.bridgy.setOffset(offsetX, offsetY);
+                exportRoot.bridgy.fadeIn();
+                console.log("yep");
+            }
+//            
+//            window.maybeAfter = function() {
+//                exportRoot.bridgy.setOffsetY(12);
+//                console.log("yep");
+//            }
+
+        </script>
+
+        <!-- write your code here -->
+
+    </head>
+    <body onload="init();" style="background-color:#191F27;margin:0px;">
+        <canvas id="canvas" width="1126" height="1054" style="background-color:#202732"></canvas>
+<!--        #191F27-->
+    </body>
+</html>

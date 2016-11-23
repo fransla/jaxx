@@ -1,0 +1,4640 @@
+
+/**
+*  This stylesheet is for design only. Every selector should include only references
+*  to tag names or classes with the prefix "css".
+*
+*  Safe properties to modify are:
+*    - background (background-color, background-image, etc.)
+*    - border
+*    - color
+*    - font (font-size, font-weight, etc.)
+*    - height*
+*    - line-height
+*    - padding
+*    - margin
+*    - text-align
+*    - text-decoration
+*    - width*
+*
+*  Other notes
+*    - ONLY use classes (no id's)
+*    - every class must begin with css
+*    - please keep css properties ordered alphabetically
+*/
+
+/*
+.noSelect {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+user-select: none;
+}
+*/
+
+a {
+    cursor: pointer;
+    color: #2681FF;
+}
+
+a:hover {
+    color: #7FD3F7;
+}
+
+.aboutPage h1 {
+    font-size: 15px;
+    font-weight: 100;
+    padding-left: 20px;
+    margin-top: 14px;
+    width: 90px;
+}
+
+.aboutPage ul {
+    margin-left: 20px;
+    padding: 0;
+}
+
+.aboutPage ul li {
+    list-style: none;
+    color: #a1a1a1;
+    font-size: 14px;;
+}
+
+body {
+    background-color: #191F27;
+    color: #fff;
+    font-family: 'Avenir Next';
+    font-weight: normal;
+    margin: 0;
+    font-size: 1.0em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    overflow: hidden;
+}
+
+.cssCoinSelector {
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    height: 16px;
+    width: 50px;
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: list-item !important;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.cssCoinSelector.cssSelected {
+/*
+    font-size: 13px;
+    height: 16px;
+    width: 47px;
+    margin-top: 2px;
+*/
+    color: #fff !important;
+}
+
+/*===== Menu Styles Starts here =====*/
+.cssMenu {
+    /* background-color: #fff; */
+    /*    box-shadow: 0 0 10px 1px #000;*/
+    /*
+	display: none;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    width: 166px;
+    z-index: 2;
+	*/
+	/* These are added from a template */
+    opacity: 1;
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    z-index: 15;
+    width: 300px;
+    height: 100vh;
+	margin-left: 100vw;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(55,69,83,0.75);	
+}
+
+/*
+.cssMenuCalc {
+    margin-left: calc(100% - 300px);
+}
+*/
+.cssMenu .cssMainMenu > .cssItem:hover {
+    background-color: #dfdfdf;
+}
+
+.cssMenu .cssMainMenu > .cssItem {
+    text-align: left;
+    border-bottom: 1px solid #d7d7d7;
+    color: #000;
+    cursor: pointer;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 15px !important;
+	/* Added from a template */
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid #222222;
+    border-top: 1px solid #444444;
+    padding: 15px;	
+}
+/*
+.cssLogoBanner .cssHamburgerMenu{
+    float: left;
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+}
+*/
+.cssMainMenuCloser {
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top:0px;
+    left:0px;
+    right: 0;
+    opacity: 0;
+    z-index: 20;
+}
+
+.cssMenu .cssMenuWindowOptions { /* This contains 'MENU', 'COIN TYPES' and 'CURRENCIES' */
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.cssMenu .cssMenuWindowOptions .cssMenuWindowOptionItem {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.menuWindowOptionMenu.cssSelected ~ .cssUnderline {
+    margin-left: 8%;
+    width: 56px;
+}
+
+.menuWindowOptionWallets.cssSelected ~ .cssUnderline {
+    margin-left: 29.3%;
+    width: 82px;
+}
+
+.menuWindowOptionCurrencies.cssSelected ~ .cssUnderline {
+    margin-left: 59.5%;
+    width: 94px;
+}
+
+.cssUnderline {
+    height: .15rem;
+    width: 25%;
+    margin: 0;
+    background: #fff;
+    border: none;
+    transition: .1s ease-in-out;
+    margin-top: 3px;
+}
+.cssMenu .cssMenuWindowOptions .cssMenuWindowOptionItem.cssSelected { /* This is the selected window option item */
+    color: rgb(256, 256, 256) !important;
+}
+.cssMenu .cssActiveWindow {
+    margin-top: 14px;
+}
+.cssMenu .cssActiveWindow .cssMainMenuWindow { /* The window as a whole */
+    display: none;
+}
+
+.cssMenu .cssActiveWindow .cssMainMenuWindow.cssSelected { /* The selected window */
+    display: block !important;
+}
+.cssMenu .cssActiveWindow .cssMainMenuWindow .cssItem {
+    padding-left: 40px;
+    display: block;
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    font-size: 16px;
+    height: 46px;
+    line-height: 46px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    font-weight: 200;
+}
+.cssMenu .cssActiveWindow .cssMainMenuWindow .cssItem:hover {
+    background-color: #54739D ;
+}
+.cssMenu .cssActiveWindow .cssMainMenuWindow .cssItem:active {
+    background-color: #2681FF ;
+}
+.cssList .cssCoinList .cssCoinCurrency:hover {
+    background-color: #54739D ;
+}
+
+/* Hover */
+@keyframes hover {
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+.cssMenu .cssMenuWindowOptions .cssMenuWindowOptionItem {
+    display: inline-block;
+    transition-duration: .5s;
+    transition-property: transform;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+.cssMenu .cssMenuWindowOptions .cssMenuWindowOptionItem:hover {
+    transform: translateY(-6px);
+    animation-name: hover;
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* Pulse */
+@keyframes pulse {
+    25% {
+        transform: scale(1.8);
+    }
+    75% {
+        transform: scale(1.6);
+    }
+}
+.cssBalanceBox .cssQRCode {
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+.cssBalanceBox .cssQRCode:hover {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.cssHighlighted:hover {
+    color: #9c9c9c;
+}
+.cssHighlighted.cssSourceCoin:hover {
+    color: #ffffff;
+}
+
+.cssActiveWindow .cssMainMenuWallets .cssList .cssCoinList {
+    width: 100%;
+    margin: 0px;
+}
+.cssActiveWindow .cssMainMenuWallets .cssList tbody {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+}
+.cssList .cssCoinList .cssCoinCurrency {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    font-size: 16px;
+    height: 46px;
+    line-height: 46px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    font-weight: 200;
+}
+/*
+.cssList .cssCoinList .cssCoinCurrency .cssItemNumberLabel {
+    width: 15px;
+}
+*/
+.cssList .cssCoinList .cssCoinCurrency .cssSelectedCurrency {
+    width: 10%;
+    margin-top: 14px;
+}
+.cssActiveWindow .cssMainMenuWallets .cssList .cssCoinList .cssHandle {
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    right: 0;
+}
+.ui-sortable-helper{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: #E76F22 !important;
+}
+/* Styles below pertain to currencies on the main menu */
+
+.menu .cssCloseBox {
+    height: 30px;
+    width: 30px;
+}
+
+.cssAddressFont {
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+/*===== Menu Styles Ends here =====*/
+/*Found Address Scroll*/
+
+.cssAddressScroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 80px;
+    /*    margin-bottom: 8px;*/
+}
+
+/* Found Address Scrollbar */
+
+.cssAddressScroll::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+.cssAddressScroll::-webkit-scrollbar-track {
+    background-color: #06232e;
+}
+
+.cssAddressScroll::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssAddressScroll::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssAddressScroll::-webkit-scrollbar-thumb:active {
+    background-color: #174052;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+/* Found Address Scrollbar Ends */
+
+.cssBlueButton {
+    text-transform: uppercase;
+    color: #1597FF;
+    font-size: 12px;
+    border: 2px solid #2479BC;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 155px;
+    letter-spacing: 0.5px;
+}
+
+.cssBlueButton.cssEnabled {
+    border: 2px solid #1597FF;
+}
+
+.cssBlueButton:active {
+    color: #fff;
+    background-color: #2681FF;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+}
+
+.cssModal .cssBlueButton {
+    width: 120px;
+}
+.cssProceedBtn {
+    width: 75% !important;
+    display: inline-block !important;
+    float: left;
+}
+.cssProceedCountDown {
+    width: 35px !important;
+    height: 35px;
+    border-radius: 50%;
+    /*    border-radius: 5px;*/
+    border: 2px solid #1597FF;
+    color: #1597FF;
+    display: inline-block;
+    line-height: 35px;
+    float: left;
+    margin-left: 10px;
+}
+.cssBlueButtonWide {
+    /*    background-color: #359fcd;*/
+    text-transform: uppercase;
+    color: #1597FF;
+    font-size: 12px;
+    border: 3px solid #1597FF;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    /*    width: 250px;*/
+/*
+    -moz-transform:translateX(2px);  
+    -webkit-transform:translateX(2px);  
+    -o-transform:translateX(2px);  
+    -ms-transform: translateX(2px);
+    transform: translateX(2px);
+*/
+    -webkit-transition-delay: 0.5s; 
+    -moz-transition-delay: 0.5s;
+    -ms-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+    -webkit-transition: all 1s cubic-bezier(0.39, 0.18, 0.43, 0.62);
+    -moz-transition: all 1s cubic-bezier(0.39, 0.18, 0.43, 0.62);
+    -ms-transition: all 1s cubic-bezier(0.39, 0.18, 0.43, 0.62);
+    -o-transition: all 1s cubic-bezier(0.39, 0.18, 0.43, 0.62);
+    transition: all 1s cubic-bezier(0.39, 0.18, 0.43, 0.62);
+}
+.cssBlueButtonWidePairAnotherDevice {
+    text-transform: uppercase;
+    color: #1597FF;
+    font-size: 12px;
+    border: 2px solid #1597FF;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 250px;
+}
+.cssWrapperForKeys {
+    width: 100%;
+    /*    height: 100px;*/
+}
+.cssNonHdPrivateKeys {
+    width: calc(100% - 10px);
+}
+/*Display Private Keys - Bitcoin*/
+.cssbackupTab2.cssPrivateKeys {
+    margin-bottom: 0;
+}
+.cssKeysPrice {
+    background-color: #191F27;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    height: calc(100% - 325px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #54739D;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+.cssKeysPrice::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssKeysPrice::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssKeysPrice::-webkit-scrollbar-track {
+    background-color: #191F27;
+
+}
+
+.cssKeysPrice::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssKeysPrice::-webkit-scrollbar-thumb:hover {
+    background-color: #191F27;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssKeysPrice::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+.cssPrivateKeysDisplay {
+    background-color: #303B48 !important;
+    overflow: hidden;
+}
+.cssKeys {
+    text-align: center;
+    color: #303B48;
+    height: 64px;
+    width: 100%;
+    display: inline-block;
+    background-color: #fff;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 0 3px 6px rgba(25,31,39,0.20), 0 3px 6px rgba(25,31,39,0.23);
+}
+.cssKeys span {
+    /*    padding-left: 10px;*/
+    display: block;
+    margin-bottom: 10px;
+}
+.cssKeys span:first-child {
+    padding-top: 12px;
+    font-size: 12px;
+}
+.cssKeys span:nth-child(2) {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 9px;
+}
+.cssPrice {
+    font-size: 14px;
+    color: #fff;
+    width: calc(100% - 10px);
+    height: 30px;
+    display: block;
+    background-color: rgba(136,144,175, 0.3);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+.cssPrice .cssAccountBalance {
+    height: 30px;
+    display: inline-block;
+	vertical-align: top;
+	padding-top: 8px;
+	margin: none;
+}
+.cssBtnExport {
+    margin-top: 20px;
+}
+/*Display Private Keys - Ethereum*/
+.cssWrapperEthPrivateKeys {
+    height: calc(100% - 360px);
+    background-color: #191F27;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #54739D;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.cssWrapperEthPrivateKeys::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssWrapperEthPrivateKeys::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssWrapperEthPrivateKeys::-webkit-scrollbar-track {
+    background-color: #191F27;
+}
+
+.cssWrapperEthPrivateKeys::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssWrapperEthPrivateKeys::-webkit-scrollbar-thumb:hover {
+    background-color: #191F27;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssWrapperEthPrivateKeys::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+/*
+.cssbackupTab2.cssNonHDbg {
+background-color: #272E38;
+}
+*/
+.cssKeysPriceEthr {
+    /*    padding-top: 10px;*/
+    padding-bottom: 10px;
+    /*    width: 100%;*/
+}
+.cssKeysPriceEthr2 {
+    height: 65px;
+    width: 100%;
+    background-color: #191F27;
+}
+.cssKeysPriceEthr::-webkit-scrollbar {
+    width: 0.6em;
+}
+
+.cssKeysPriceEthr::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssKeysPriceEthr::-webkit-scrollbar-track {
+    background-color: #191F27;
+
+}
+
+.cssKeysPriceEthr::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssKeysPriceEthr::-webkit-scrollbar-thumb:hover {
+    background-color: #191F27;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssKeysPriceEthr::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+.cssBlueButtonWidePairAnotherDevice:active {
+    color: #fff;
+    background-color: #359fcd;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 250px;
+}
+
+.cssBlueButtonWide:active {
+    color: #fff;
+    background-color: #2681FF;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 250px;
+}
+
+.cssClose {
+    float: right;
+    margin-top: -30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cssQRClose {
+    float: right;
+    margin-top: 7px;
+    margin-right: 12px;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+/* @TODO: Move to use this more places */
+.cssCenter {
+    text-align: center;
+}
+
+.cssCenteredConfirmBox {
+    text-align: center;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.cssDisclaimer {
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.8;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.cssBanners > div {
+    background-color: #2681FF;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+/*    height: 40px;*/
+/*    line-height: 40px;*/
+    min-height: 0vh;
+    line-height: 20px;
+    text-align: center;
+}
+
+.cssSetDefaultWallet {
+    padding-right: 0px !important;
+}
+
+.cssSetDefaultWalletList {
+    text-align: left;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+/*
+.cssSetDefaultWalletList {
+    height: 60px;
+    width: 50%;
+    background-color: #fff;
+    margin: auto;
+}
+*/
+
+.cssSetDefaultWalletList p {
+    color: black;
+    text-align: center;
+}
+
+.cssSetDefaultWalletList .cssDefaultWalletItem {
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    color: #fff !important;
+    padding-left: 8px;
+    font-size: 15px;
+    height: 55px;
+    line-height: 55px;
+    cursor: pointer;
+}
+/*
+.cssSetDefaultWalletList .cssDefaultWalletItem {
+    color: #191F27 !important;
+    padding-left: 8px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+*/
+
+.cssDefaultWalletItem:hover {
+    background-color: #c7cdd0;
+}
+
+.cssSettings.cssSetDefaultWallet .cssSetDefaultWalletList .cssDefaultWalletItem.cssSelected {
+    color: #fff !important;
+}
+
+.cssSettings.cssSetCurrency .cssList {
+    position: relative;
+/*    height: 100vh;*/
+    height: calc(100vh - 180px);
+    margin: auto;
+/*    margin-top: 30px;*/
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssSelectedCurrency {
+    width: 10%; !important
+    margin: 0 auto;
+    margin-top: 24px;
+    /*margin-left: 0.5em;*/
+}
+
+.cssSettings.cssSetCurrency .cssList .cssHandle {
+    height: 80%;
+	width: 10%;
+    position: absolute;
+    right: 0;
+    margin-top: 11px;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssUnit {
+    position: relative;
+    left: 10px;
+}
+
+.cssSettings.cssSetCurrency .cssList .name {
+    position: relative;
+    left: 10px;
+}
+
+.cssSettings.cssSetCurrency .cssList .rate {
+    text-align: right;
+    position: absolute;
+    right: 45px;
+    font-size: 13px
+}
+
+.cssCurrencyFloat {
+    /*float: left;*/
+    display: block;
+}
+
+.cssCurrencyName {
+    font-size: 12px;
+    color: #c6c5c5;
+    margin-left: 5px;
+    margin-top: 1px;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssCurrency {
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    /*background-color: #191F27;*/
+	font-size: 16px;
+    height: 46px;
+    line-height: 30px;
+    /*    width: 96%;*/
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    padding-bottom: 20px;
+    font-weight: 200;
+    position: relative;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssCurrency.cssBlueHighlight{
+    /*    color: #000 !important;*/
+	background-color: #2681FF !important;
+    /*background-color: #2681FF;*/
+}
+
+.cssSettings.cssSetCurrency .cssList .cssCurrency label {
+	display: block;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssBlueHighlight label{
+    /*    color: #000 !important;*/
+    background-color: #2681FF !important;
+}
+/*
+.cssSettings.cssSetCurrency .cssList .cssCurrency input {
+	width: 13px;
+	height: 20px;
+	padding: 0;
+	margin:0;
+	vertical-align: bottom;
+	position: relative;
+	top: -1px;
+	*overflow: hidden;
+}
+*/
+
+.cssSettings.cssSetCurrency .cssList .cssCurrency:hover {
+    background-color: #54739D;
+}
+.cssSettings.cssSetCurrency.cssBackup p {
+    padding-right: 0px;
+}
+
+.cssSettings.cssSetCurrency .cssList .cssCurrency.cssSelected {
+    /*    background-color: #9a9ea0;*/
+    background-color: #2479BC;
+}
+
+.cssSettings.cssSetCurrency .cssExchangeRate {
+    margin-top: 16px;
+    color: #ff7200;
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.cssSettings.cssSetCurrency .cssExchangeRateList {
+    width: 100%;
+    margin: 0px;
+}
+
+.cssSettings.cssSetCurrency .cssExchangeRateList table {
+    border: none;
+}
+
+/* Scrollbar for Currency */
+
+.cssSettings.cssSetCurrency .cssList::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssSettings.cssSetCurrency .cssList::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssSettings.cssSetCurrency .cssList::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssSettings.cssSetCurrency .cssList::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssSettings.cssSetCurrency .cssList::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+/* Currency Checkbox */
+
+
+.cssCk-button:hover {
+    background-color: #0F3C4E;
+}
+
+
+.cssCk-button label span {
+    display:block;
+    padding-left: 8px;
+}
+
+.cssCk-button label input {
+    position:absolute;
+    top:-20px;
+}
+
+.cssCk-button input:checked + span {
+    background-color: #215F77;
+    color:#fff;
+}
+/* Currency Checkbox Ends */
+
+/* Scrollbar for Currency Ends */
+
+
+.cssPuddle {
+    background-color: #092d3c;
+}
+
+.cssTab {
+    background-color: #303B48;
+    text-align: center;
+    height: 60px;
+    line-height: 63px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.cssTab:hover {
+    background-color: #54739D;
+}
+
+.cssTab span {
+    opacity: 0.6;
+}
+
+.cssTab.cssSelected {
+    background-color: #525A66;
+}
+
+.cssTabOverrideHover {
+    background-color: #303B48;
+    text-align: center;
+    height: 60px;
+    line-height: 63px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.cssTabOverrideHover span {
+    opacity: 0.6;
+}
+
+.cssTabOverrideHover.cssSelected {
+    background-color: #525A66;
+}
+
+.cssTab.cssSelected span {
+    opacity: 1;
+}
+
+.cssbackupTab {
+    background-color: #303B48;
+    margin: 1px;
+    padding: 3px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.cssbackupTab:hover {
+    /*    background-color: #06232e;*/
+    background-color: #54739D;
+}
+
+.cssbackupTab:active {
+    background-color: #2681FF;
+}
+
+.cssbackupTab2 {
+    background-color: #303B48;
+    padding: 3px 0px 3px 0px;
+    margin-bottom: 19px;
+    line-height: 18px;
+}
+
+.cssbackupTab2 td {
+    font-size:
+}
+
+.cssBeforeYouDisplayNextMasterMneumonic {
+	text-align: left;	
+}
+.cssShapeShiftAndToggle {
+    display: block;
+    position: relative;
+/*    line-height: 28px;*/
+}
+.cssContent .cssShapeShiftInfoModal {
+    text-align: left;
+}
+.cssContent .cssShapeShiftInfoModal p {
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1.4em;
+}
+.cssContent .cssShapeShiftInfoModal span {
+    font-weight: bolder;
+}
+.cssContent .cssShapeShiftInfoModal .cssLastParagraphShapeShiftInfo {
+    margin-bottom: 0;
+}
+/***************************
+    ShapeShift Toogle
+***************************/
+.cssShapeShiftTogglelist{
+    margin: 0;
+    margin-left: 78px;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.cssShapeShiftTogglelist li {
+    list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cssShapeShiftToggleItem {
+  margin: 0 2em;
+}
+.cssSSToggle {
+  display: none;
+}
+.cssSSToggle, .cssSSToggle:after, .cssSSToggle:before, .cssSSToggle *, .cssSSToggle *:after, .cssSSToggle *:before, .cssSSToggle + .cssSSTogglBtn {
+  box-sizing: border-box;
+}
+.cssSSToggle::-moz-selection, .cssSSToggle:after::-moz-selection, .cssSSToggle:before::-moz-selection, .cssSSToggle *::-moz-selection, .cssSSToggle *:after::-moz-selection, .cssSSToggle *:before::-moz-selection, .cssSSToggle + .cssSSTogglBtn::-moz-selection {
+  background: none;
+}
+.cssSSToggle::selection, .cssSSToggle:after::selection, .cssSSToggle:before::selection, .cssSSToggle *::selection, .cssSSToggle *:after::selection, .cssSSToggle *:before::selection, .cssSSToggle + .cssSSTogglBtn::selection {
+  background: none;
+}
+.cssSSToggle + .cssSSTogglBtn {
+  outline: 0;
+  display: block;
+  width: 3.6em;
+  height: 1.8em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.cssSSToggle + .cssSSTogglBtn:after, .cssSSToggle + .cssSSTogglBtn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.cssSSToggle + .cssSSTogglBtn:after {
+  left: 0;
+}
+.cssSSToggle + .cssSSTogglBtn:before {
+  display: none;
+}
+.cssSSToggle:checked + .cssSSTogglBtn:after {
+  left: 50%;
+}
+.cssSSToggleLight + .cssSSTogglBtn {
+  background: #E52E4B;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.cssSSToggleLight + .cssSSTogglBtn:after {
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.cssSSToggleLight:checked + .cssSSTogglBtn {
+  background: #8890AF;
+}
+.cssCurrencyToggleTo {
+    bottom: 4px;
+    margin-left: 10px;
+    position: absolute;
+    font-size: 1.1em;
+}
+.cssShapeShiftAndToggle .cssCurrencyToggleFirst {
+    margin-left: -4px;
+    position: relative;
+    display: inline-block;
+    bottom: 2px;
+    font-size: 1em;
+}
+.cssCurrencyToggleSecond {
+    bottom: 4px;
+    left: 235px;
+    position: absolute;
+    font-size: 0.85em;
+}
+/***************************
+    ShapeSHoft Toogle Ends
+    ShapeSHoft Toogle Ends
+    ShapeSHoft Toogle Ends
+***************************/
+/***************************
+ShapeSHoft New Toogle
+ShapeSHoft New Toogle
+ShapeSHoft New Toogle
+***************************/
+.cssShapeShift .cssDisplayCoinsArrow {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.cssShapeShift .cssDisplayCoinsArrow .cssFlipped {
+    -moz-transform: scaleY(-1) !important;
+    -o-transform: scaleY(-1) !important;
+    -webkit-transform: scaleY(-1) !important;
+    transform: scaleY(-1) !important;
+    filter: FlipV !important;
+    -ms-filter: "FlipV" !important;
+}
+.cssShapeShift .cssDisplayCoinsArrow img {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 2px;
+}
+.cssShapeShiftAndToggle .cssArrowcoinToCoin {
+    margin-bottom: 3px;
+	float: left;
+	margin-top: 3px;
+}
+.cssCoinText {
+    position: relative;
+    margin-left: 25px;
+    top: 1px;
+    font-size: 1em;
+}
+.cssSourceCoin {
+    cursor: default !important;
+}
+/***************************
+ShapeSHoft New Toogle Ends
+ShapeSHoft New Toogle Ends
+ShapeSHoft New Toogle Ends
+***************************/
+.cssTabContent {
+    display: none; /* @TODO: move to setup */
+    background-color: #051b24;
+    transition: background-color 0.3s;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.cssTabContent.cssSelected {
+    background-color: #525A66;
+    background: -webkit-linear-gradient(top,rgba(82,90,102,1),rgba(48,59,72,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(top,rgba(82,90,102,1),rgba(48,59,72,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(top,rgba(82,90,102,1),rgba(48,59,72,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to bottom, rgba(82,90,102,1),rgba(48,59,72,1)); /*Standard*/
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.cssImageArrows {
+    margin-right: 3px;
+    opacity: 0.3;
+}
+
+.cssImageArrowUp {
+    margin-top: -5px;
+    vertical-align: middle;
+    padding-left: 8px;
+}
+
+.cssImageArrowDown {
+    margin-top: -5px;
+    padding-left: 8px;
+    vertical-align: middle;
+
+}
+
+.cssImageCamera {
+    float: right;
+    padding-top: 17px;
+    padding-right: 8px;
+}
+
+.cssImageCheck {
+    vertical-align: baseline;
+    margin-left: -27px;
+    padding-right: 14px;
+}
+
+.cssImageContact {
+    padding-top: 11px;
+    padding-right: 15px;
+}
+
+.cssImageCopy {
+    cursor: pointer;
+    padding-left: 3px;
+}
+
+.cssImageCopy:active {
+    opacity: 0.5;
+}
+
+.cssImageInfo {
+    float: right;
+}
+
+.cssImageReturn {
+    float: left;
+    padding-top: 37px;
+    padding-left: 54px;
+}
+
+.cssImageReturn:hover {
+    opacity: 0.8;
+}
+
+.cssImageReturn:active {
+    opacity: 0.6;
+    background-color: #051b24;
+}
+
+.cssImageWarning {
+    vertical-align: sub;
+    padding-right: 5px;
+}
+
+/*Remove Spinner for Firefox*/
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.cssInput {
+    background-color: #fff;
+    border: 1px solid #bbb;
+    height: 35px;
+    position: relative;
+    text-align: left;
+}
+
+.cssInput input {
+    background-color: transparent;
+    border: none;
+    border-width: 0;
+    color: #444;
+    font-size: 13px;
+    height: 33px;
+    padding-left: 10px;
+    ddd-width: 70%;
+}
+
+.cssCameraInput.cssInput input {
+    width: calc(100% - 40px);
+}
+.cssReceivingAddress {
+    margin-bottom: 5px;
+}
+
+.cssCameraInput.cssPassword.cssInput input {
+    width: calc(100% - 10px);
+}
+
+.cssWarningWindow {
+    /*    background-color: #17a1db;*/
+    background-color: #E52E4B;
+    font-weight: 300em;
+    font-size: 13px;
+    line-height: 32px;
+    margin-bottom: 5px;
+}
+
+.cssWarningWindow p {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.cssWarningWindowSpendable {
+    /*    background-color: #17a1db;*/
+    background-color: #2681FF;
+    font-weight: 300em;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 5px;
+    /*    margin-bottom: 5px;*/
+}
+
+.cssWarningWindowSpendable p {
+    margin: 0;
+    padding-left: 10px;
+    white-space: pre-line;
+}
+
+/*
+.cssTopGap {
+margin-top: 8px;
+}
+*/
+
+.cssCameraTab {
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 41px;
+    margin: auto;
+}
+
+.cssCameraTab1 {
+    height: 60px;
+    width: 5px;
+    background-color: #191F27;
+    /*    background-color: darkorchid;*/
+    margin-left: 20px;
+    position: fixed;
+}
+
+.cssCameraTab2 {
+    height: 40px;
+    width: 45px;
+    background-color: #191F27;
+    /*    background-color: darkorchid;*/
+    position: fixed;
+    margin-top: 10px;
+}
+
+.cssAmount.cssInput input {
+    width: 70%;
+    font-size: 16px;
+}
+
+
+.cssJaxxToken {
+    margin: auto;
+    width: 240px;
+}
+
+/*Input Invalid Removes red highlight on firefox extension*/
+
+input:invalid {
+    box-shadow: none;
+}
+
+input[type=text]:focus {
+    outline: 0 none;
+}
+
+input[type=number]:focus {
+    outline: 0 none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-buton {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/*Temporary Pop-Up*/
+
+.popOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.popOverlay:target {
+    visibility: visible;
+    opacity: 1;
+    padding: 10px;
+}
+
+.popup {
+    margin: auto;
+    padding: 1px 20px 5px;
+    background: #191F27;
+    border-radius: 5px;
+    position: relative;
+    transition: all 2s ease-in-out;
+}
+
+.popupTitle {
+    background-color: #303B48;
+    border-radius: 5px;
+    height: 31px;
+}
+
+.popup p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 1px;
+    padding: 5px;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-weight: lighter;
+    text-decoration: none;
+    color: #fff;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/*Temporary Pop-Up Ends*/
+
+.cssPopulateColor {
+    background: #f37321;
+    /*  height: 75px;*/
+    width: 98%;
+    margin: auto;
+    border-radius: 10px;
+    line-height: 19px;
+    padding: 10px 5px 15px 5px;
+	/* This allows the height of the Mneumonic box to flex. */
+	display: flex;
+	flex-direction: column;
+	min-height: 0vh;
+}
+
+.cssTabContent .cssUnitToggle {
+    color: #000;
+}
+
+.cssTabContent .cssUnitInput {
+    padding-left: 50px;  /* Same cssUnitToggle.width*/
+}
+
+.cssInput .cssAmountDetails {
+    color: #888;
+    font-size: 0.85em;
+    line-height: 37px;     /* Same height as input + border*/
+}
+
+.cssTabContent .cssInput .cssUnitToggle {
+    color: #a3a3a3;
+    background-color: #303B48;
+    border-right: 1px solid #aaa;
+    font-size: 0.9em;
+    height: 37px;
+    line-height: 37px;
+    width: 50px;
+    text-align: center;
+}
+
+.cssInput .cssButton {
+
+    color: #eee;
+    background-color: #54739D;
+    border-left: 1px solid #D4D4D4;
+    font-size: 0.9em;
+    height: 37px;
+    line-height: 37px;
+    width: 80px;             /* Same as (.cssButton .span.lbale).with */
+}
+
+.cssInput .cssButton.cssEnabled {
+    background-color: #2681FF;
+    color: #fff;
+}
+
+.cssInput .cssButton span.label  {
+    transition: opacity 0.3;
+    opacity: 0;
+    text-align: center;
+    width: 80px;              /* Same as (.cssButton).width */
+}
+
+
+/* The cssValidOnename class is added to the input
+field when a valid Onename is found for its contents */
+input.cssValidOnename {
+    color: #0a0;
+}
+
+/* The cssValidShapeshift class is added to the input
+field when user types "shapeshift" */
+input.cssValidShapeshift {
+    color: #55779F;
+}
+
+
+/* The cssValidShapeshiftAmount class is added to the input
+field when amount is outside shapeshift boundaries" */
+input.cssValidShapeshiftAmount {
+    color: #B22222;
+}
+
+
+.cssAddressBox {
+    color: #cfd1d2;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.cssAddressBox .cssIntro {
+    font-size: 0.8em;
+    margin-bottom: -4px;
+}
+
+.cssAddressBox .cssAddress {
+    font-size: 14px;
+}
+.cssAddressBox .cssAddressPlace {
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: center;
+    /*    margin-top: 0.1em;*/
+    overflow:auto;
+}
+.cssAddressBox .cssAddressPlace .cssPopulateAddress {
+    display: inline-block;
+    /*
+    margin-top: 5px;
+    margin-left: 15%;
+    */
+}
+.cssWallet .cssSeparator {
+    margin: 0 5%;
+    border-top: 1px solid rgba(136,144,175,0.3);
+}
+
+.cssQRCode {
+    border: 10px solid white;
+    background-color: #fff;
+}
+
+.cssBalanceBox {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 16px;
+    padding-left: 15px;
+}
+
+.cssBalanceBox .cssRefresh {
+    cursor: pointer;
+    /*
+    width: 20px;
+    height: 16px;
+    */
+    padding-top: 4px;
+}
+
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(180deg); }
+}
+
+@keyframes spin {
+    100% { transform: rotate(180deg); }
+}
+
+.cssBalanceBox .cssRefresh.cssActive {
+    -webkit-animation: spin 0.4s;
+    animation: spin 0.4s;
+    opacity: 0.7;
+}
+
+.cssBalanceBox .cssBalance {
+    display: inline-block;
+    float: left;
+    padding-top: 2px; /* centering the content vertically... Not the best way... */
+}
+
+.cssBalanceBox .cssBitcoinIntro {
+    color: #ff7200;
+    font-size: 15pt;
+}
+
+.cssBalanceBox .cssBitcoinAmount {
+    color: #ff7200;
+    font-size: 22pt;
+    /*    font-size: 13pt;*/
+    /*    font-size: 16pt;*/
+}
+
+.cssBalanceBox .cssEthereumAmountSuperscript {
+    color: #ff7200;
+    font-size: 15pt;
+    margin-top: 10px;
+    vertical-align: top;
+    position:relative;
+    float:right;
+}
+
+.cssBalanceBox .cssFiatAmount {
+    color: #ddd;
+    font-size: 14pt;
+	display: block;
+    float: left;
+    cursor: pointer;
+}
+.cssBalanceBox .cssFiatAmount:hover {
+    color: #9c9c9c ;
+}
+
+.cssBalanceBox .cssQRCode {
+    border: 4px solid white;
+    margin-top: -24px;
+    float: right;
+    height: 100px;
+    width: 100px;
+}
+
+.cssCopied {
+    background: #2681FF;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    top: 80%;
+    left: 25%;
+    width: 48%;
+    line-height: 28px;
+    font-size: 14px;
+    margin-top: 0.8em;
+}
+
+.cssCopiedLarge {
+    background: #17a1db;
+    position: absolute;
+    color: #fff;
+    top: 80%;
+    left: 19.5%;
+    width: 60%;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.cssModal .cssCopiedLarge {
+    background: #17a1db;
+    top: inherit;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.cssSettingsMnemonic p.cssCopyright {
+    font-size: 11px;
+    color: #BBB;
+}
+
+.cssTableHeader {
+    /*    background-color: #051b24;*/
+    color: #ddd;
+    margin-bottom: 15px;
+    /*    height: 35px;*/
+    line-height: 1em;
+    text-align: center;
+}
+
+/* Debug
+table {
+border-style: border-collapse;
+border: 1px solid green;
+}
+table td {
+border: 1px solid green;
+}
+*/
+
+.table.transactions table {
+    width: 100%;
+}
+
+table.cssGlance {
+    height: 52px;
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+    cursor: pointer;
+}
+
+table.cssGlance:hover {
+    background-color: #54739D;
+}
+
+table.cssVerbose {
+    height: 7px;
+    font-size: 9pt;
+}
+
+table.cssGlance .cssDetails {
+    color: #cfd1d2;
+	flex-direction: row;
+    font-size: 10pt;
+    padding-left: 14px;
+    padding-top: 6px; /* Center hack... */
+	width: 140px;
+}
+
+table.cssGlance .cssAmount {
+    color: #ff7200;
+    line-height: 52px;
+    padding-right: 14px;
+    text-align: right;
+}
+
+table.cssGlance .cssDate {
+    font-size: 10pt;
+    color: #fff;
+}
+
+table.cssGlance .cssTime {
+    padding-left: 10px;
+    font-size: 9pt;
+}
+
+
+table.cssGlance .cssConfirmations {
+    font-size: 10pt;
+}
+
+table.cssGlance .cssToAddress {
+    font-size: 9pt;
+}
+
+table.cssGlance .cssDisplayForDAOImageInTransaction{
+	background: url(images/logo-default.png)
+		no-repeat center center;
+	background-size: 100%;
+	display: none;
+	width: 12px;
+	height: 100%;
+}
+
+table.cssGlance .cssDisplayForREPImageInTransaction{
+    background: url(images/REPlogo.png)
+        no-repeat center center;
+    background-size: 100%;
+    display: none;
+    width: 12px;
+    height: 100%;
+}
+
+
+table.cssVerbose {
+    background-color: #525A66;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+table.cssVerbose .cssHeading {
+    opacity: 0.8;
+    font-size: 9pt;
+}
+
+
+table.cssVerbose .cssToAddress {
+    padding-left: 14px;
+}
+
+table.cssVerbose .cssMiningFee {
+    padding-right: 14px;
+    text-align: right;
+}
+
+table.cssVerbose .cssTxid {
+    padding-left: 14px;
+}
+
+table.cssVerbose .cssConfirmations {
+    text-align: center;
+}
+
+table.cssVerbose .cssBlockHeight {
+    padding-right: 14px;
+    text-align: right;
+}
+
+.cssGapSmall {
+    /*  margin-bottom: 12px;*/
+    margin-bottom: 8px;
+}
+
+.cssLogoBanner {
+    /* @note: this is screwing up reflow and requiring hacks elsewhere. need to remove and do it properly,
+    also has implications for the svg images of the coins, which need to be a standard height */
+/*    margin-top: -18px;*/
+    margin-top: 12px;
+}
+
+
+
+.cssCoinButtonText {
+    margin-left: 21px;
+    /* float: right; */
+    position: relative;
+    top: 2px;
+}
+
+.cssModal {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 9px;
+    margin: 0 auto;
+}
+
+.cssModal .cssContent {
+    background-color: #3a414f;
+    border-radius: 6px;
+    /*  padding: 4px;*/
+    margin-top: 27px;
+    padding: 15px;
+    padding-bottom: 15px;
+    max-width: 600px;
+    margin: 27px auto;
+    line-height: 1.32em;
+    
+}
+.cssCircleUnchecked{
+    border: 1px solid white;
+    height: 13px;
+    width: 13px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+.cssCurrencyisChecked {
+    background: url('img/CHECKMARK-white.png') center center no-repeat;
+    height: 15px;
+    width: 15px;
+    background-size: contain;
+}
+.cssSelectDefaultWallet {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cssOrangeHighlightText {
+    background-color: rgba(75,90,105,0.75);
+/*    color: #F27221;*/
+}
+
+@media only screen and (max-height: 495px) {
+    .cssModal .cssContent {
+        margin-top: 0px;
+    }
+}
+
+.cssModal .cssHeader {
+    background-color: #191F27;
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-size: 10pt;
+    margin-bottom: 10px;
+}
+
+.cssModal > .cssItem {
+    padding: 17px 15px;
+}
+
+.cssModal .cssSeparator {
+    margin: 1em 0;
+    border-top: 1px solid rgba(136,144,175,0.3);
+}
+
+.cssModal .cssButtons {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.cssModal .cssButtons .cssButton {
+/*    background-color: #359fcd;*/
+    background-color: #2681FF;
+    border-radius: 4px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 84px;
+}
+
+.cssDontShowItAgain {
+    float: left;
+    line-height: 35px;
+}
+.cssEtcEthSplit .cssButton {
+    float: right;
+    margin-right: 15px;
+}
+
+.cssEtcEthSplit .cssDAORefundOuter {
+    padding-bottom: 56px !important;
+    padding-top: 20px !important;
+}
+
+.cssEtcEthSplit .cssCircleUnchecked {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cssModal .cssButtons .cssGreyButton {
+    color: #616c71;
+    background-color: #0e455c;
+    border-radius: 4px;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 84px;
+}
+
+.cssModal .cssNotice {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+}
+/* Send Modal */
+.cssBtnConform {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.cssHeaderForAddress.cssCenter {
+    padding-bottom: 20px;
+/*    border-bottom: 1px solid #123949;*/
+    margin-bottom: 15px;
+}
+
+.cssHeaderForAddress p {
+    font-size: 9pt !important;
+    display: inline-block;
+    font-weight: 500 !important;
+}
+.cssCodeAddress {
+    font-size: 0.7em;
+    font-weight: 500;
+    display: inline-block;
+}
+.cssSendPrice {
+    margin-bottom: 0.8em;
+    margin-top: 0.3em;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 500;
+    /*    font-size: 9pt !important;*/
+}
+.cssModal.cssSend .cssNotice {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.cssModal.cssSend .cssItem {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cssModal.cssSend .cssItem p {
+    margin-bottom: 0em !important;
+    font-size: 12px;
+    color: #FFF;
+    
+}
+.cssModal.cssSend .cssContent {
+    padding-bottom: 10px;
+}
+.cssModal.cssSend .cssButtons {
+    margin-bottom: 15px;
+}
+/* Send Modal Ends */
+.cssModal p {
+    font-size: 14px;
+    margin-right: 3px;
+    line-height: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.cssNoTransaction {
+    color: #6b818a;
+    font-size: 13px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.cssModal.cssSend .cssAmount {
+    color: #ff6c0e;
+    /*    font-size: 14pt;*/
+    font-weight: 500;
+}
+
+.cssModal.cssSend .cssAmount .cssUnit{
+    font-size: 10pt;
+}
+/* Modal for ShapeShift */
+.cssModal.cssShift .cssAmount {
+    color: #ff6c0e;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.cssModal.cssShift .cssAmount .cssUnit{
+    font-size: 10pt;
+}
+/* Modal for ShapeShift ends */
+
+.cssModal .cssQRCode {
+    margin-top: 15px;
+    border: 10px solid white;
+    height: 200px;
+    width: 200px;
+}
+.cssModal.cssJaxxNews hr {
+    border: 1px solid rgba(136,144,175,0.3);
+}
+.cssModal.cssJaxxNews h3 {
+    text-align: left;
+}
+.cssModal .cssGetDescriptionForJaxxNews p{
+    text-align: left;
+    font-size: 16px;
+    line-height: 22px;
+}
+.cssModal .cssGetDescriptionForJaxxNews ul,.cssModal .cssGetDescriptionForJaxxNews ol {
+    text-align: left;
+    padding-left: 20px;
+}
+/* Modal for DAO refund */
+.cssModal .cssContent.cssDAORefundOuter {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.cssModal .cssContent.cssDAORefundOuter .cssHeader {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.cssModal .cssContent.cssDAORefundOuter .cssEthAddressDaoRefund {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.cssTheDaoRefundAddresses {
+/*
+    border-top: 1px solid rgba(136,144,175,0.3);
+    border-bottom: 1px solid rgba(136,144,175,0.3);
+*/
+    line-height: 21px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.cssModal .etcEthSplitEthAddress,.etcEthSplitEtcAddress {
+    font-size: 12px;
+    line-height: 21px;
+}
+.cssTheDaoRefundButtonBegin {
+    -webkit-transition-property: width; /* Safari */
+    transition-property: width;
+/*    width: 75% !important;*/
+}
+
+.cssTheDaoRefundButtonWait {
+    -webkit-transition-property: width; /* Safari */
+    -webkit-transition-duration: 1s; /* Safari */
+    
+    transition-property: width;
+    transition-duration: 1s;
+    
+    width: 75% !important;
+    cursor: auto !important;
+}
+
+.cssModal .cssItem.cssDaoRefund {
+    padding-top: 20px;
+    background-color: #272E38;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+/*
+    padding-left: 10px;
+    padding-right: 10px;
+*/
+    line-height: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 360px;
+}
+.cssModal .cssItem .cssWarningWindowDaoRefund {
+    padding-top: 10px;
+    background-color: #D03C50;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.cssModal .cssItem .cssWarningWindowDaoRefund p {
+    text-align: left !important;
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+.cssModal .cssContent.cssDAORefundOutter .cssAlignCenter {
+    margin-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.cssModal .cssDAORefundOuter .cssButtons .cssButton {
+    width: 100px;
+}
+
+.cssModal .cssDAORefundOuter .cssDaoRefund .cssAmount {
+    color: #ff6c0e;
+    /*    font-size: 14pt;*/
+    font-weight: 500;
+}
+
+.cssTheDaoRefundAddresses2 {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.theDaoRefundAddressesTextB .cssETHLegacyTX {
+    text-align: center;
+}
+
+.cssModal .cssContent.cssDAORefundOuter {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.cssContent.cssDAORefundOuter .cssButtons {
+    margin-bottom: 0;
+}
+
+
+.cssDaoRefund::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssDaoRefund::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+.cssDaoRefund::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssDaoRefund::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssDaoRefund::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+.cssDaoRefund::-webkit-scrollbar-corner {
+/*    background-color: #191F27;*/
+    height: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+/* Modal for DAO refund Ends */
+.cssJaxxNews .cssCurrencyFontColor {
+    color: #2681FF;
+}
+
+.cssJaxxNews .cssWarningFontColor {
+    color: red;
+}
+
+.cssJaxxNews .cssJaxxMainFontColor {
+    color: #ff7200;
+}
+
+.cssJaxxNews .cssFunThingsColor {
+    color: #299E5E;
+}
+
+.populateAddress.cssAddress {
+    font-size: 8pt;
+}
+
+.cssMnemonic {
+    background-color: #ff7200;
+    height: 91px;
+    width: 328px;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.cssMnemonicPop h2 {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 4px;
+    font-weight: normal;
+}
+
+.cssMnemonicPop h1 {
+    font-size: 18px;
+    text-align: left;
+    padding-left: 4px;
+    font-weight: normal;
+}
+
+.cssNoSelect {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.cssAddressShift {
+    font-size: 0.85em !important;
+}
+
+.cssOpacity {
+    /*    opacity: 0.8;   */
+}
+
+.cssOrange {
+    color: #ff6c0e;
+    word-wrap: break-word;
+}
+
+.cssPopCenter {
+    margin-right: -34px;
+}
+
+.cssAligCenter {
+    margin-right: 0 !important;
+}
+
+/*OneName Styles*/
+
+.cssOneNameTab {
+    background-color: #051b24;
+    padding: 3px 0px 3px 0px;
+    margin-bottom: 19px;
+    line-height: 18px;
+}
+
+.cssOneNameTabContent {
+    padding: 15px;
+    background-color: #051b24;
+    padding-bottom: 15px;
+}
+
+.cssOneName h2 {
+    color: #359fcd;
+    font-size: 14px;
+    padding-left: 20px;
+    font-weight: 300;
+}
+
+.cssOneNameUser {
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.cssOneNameComplete h1.cssCenter {
+    padding-left: 0px;
+}
+
+.cssBlueButton.cssButtonSignup {
+    width: 175px;
+}
+
+.cssBlueButton.cssButtonSignup:active {
+    width: 175px;
+}
+
+.cssSettingsBackup.cssOneNameManualProfile p {
+    color: #349ecd;
+}
+
+.cssSettingsBackup.cssOneNameManualProfile h1 {
+    padding-left: 0px;
+    padding-bottom: 15px;
+}
+
+.cssSettingsBackup.cssOneNameTwitterProfile h1 {
+    padding-left: 0px;
+}
+
+.cssSettingsBackup.cssOneNameTwitterProfile p {
+    color: #4eb549;
+    font-size: 11px;
+}
+
+.cssOneNameTwitterProfile h2 {
+    font-weight: 100;
+}
+
+.cssOneNameManualProfile h2 {
+    font-weight: 100;
+}
+
+.cssOneNameTwitter .cssInput input {
+    padding-left: 30px;
+    margin-top: 2px;
+    width: 85%;
+}
+
+.cssOneNameTwitter.cssSettingsBackup h1 {
+    color: black;
+    margin-left: -13px;
+    position: absolute;
+    margin-top: 9px;
+}
+
+.cssOneNameBanner {
+    background-color: #21424f;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 15px;
+    height: 83px;
+    width: 90%;
+}
+
+.cssOneNameBanner h1 {
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+/*OneName Styles End*/
+
+.cssSettingsBackup {
+    background-color: #191F27;
+    box-shadow: 0 0 10px 1px #000;
+}
+
+.cssBackground {
+    background-color: #303B48;
+    padding: 3px 0px 3px 0px;
+}
+
+.cssSettingsBackup .cssHeader {
+    background-color: #191F27;
+    height: 50px;
+    line-height: 53px;
+    padding: 0 15px;
+}
+
+.cssSettingsBackup h1 {
+    color: #fff;
+    font-size: 15px;
+    padding-left: 20px;
+    font-weight: normal;
+    margin-bottom: -6px;
+}
+
+.cssSettingsBackup p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cssSettingsBackup ol {
+    padding-right: 20px;
+}
+
+.cssSettingsMnemonic {
+    /*    background-color: #051b24;*/
+    background-color: #191F27;
+    box-shadow: 0 0 10px 1px #000;
+}
+
+.cssDarkBg {
+    background-color: #191F27;
+}
+
+.cssSettingsMnemonic.cssBackgroundBottom {
+    background-color: #051b24;
+    /*    background-color: #092d3c;*/
+    box-shadow: 0 0 10px 1px #000;
+}
+
+.cssSettingsMnemonic dt {
+    background-color: rgba(136,144,175,0.3);
+    font-size: 14px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+
+.cssSettingsMnemonic dd {
+    background-color: #272E38;
+    font-size: 14px;
+    margin-left: 0px;
+    line-height: 20px;
+    cursor: default;
+    padding: 15px 20px 15px 20px;
+}
+
+.cssSettingsMnemonic p {
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cssSettingsMnemonic .cssHeader {
+    background-color: #191F27;
+    height: 50px;
+    line-height: 53px;
+    padding: 0 15px;
+}
+
+.cssSettingsMnemonic > .cssItem {
+    text-align: center;
+    padding: 3px 16px;
+    margin-bottom: 19px;
+}
+
+.cssSettingsMnemonic .cssSettingsPinPad {
+    background-color: #303B48;
+    width:100%;
+}
+
+.cssSettingsBackup .cssSettingsPinPad {
+    background-color: #303B48;
+    width:100%;
+}
+
+.cssSB2 p {
+    color: rgba(255, 255, 255, 1);
+}
+.cssItem.cssChangeDefWalletBg {
+    background-color: #303B48;
+    padding: 0.5em 0px 0.5em 0px !important;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    line-height: 18px;
+}
+.cssItem.cssChangeDefWalletBg p {
+    padding-right: 0 !important;
+}
+
+.cssSettings .cssHeader {
+    background-color: #191F27;
+    height: 50px;
+    line-height: 53px;
+    padding: 0 15px;
+    padding-bottom: 24px;
+}
+
+.cssSettings > .cssItem {
+    text-align: center;
+    padding: 0 16px;
+    padding-bottom: 20px;
+}
+
+.cssItem.cssCenter.cssQRFont {
+    font-size: 14px;
+    color: #a1a1a1;
+}
+
+.cssItem.cssVerifyStyle {
+    padding-bottom: 1px;
+}
+
+.cssbackupTab2 h2 {
+    margin-top: 0px;
+    color: #E52E4B;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.cssHeader .cssClose {
+    padding-top: 29px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.cssHelpPage {
+    width: 100%;
+    height: calc(100% - 58px);
+    overflow-y: auto;
+}
+
+.cssHelpPage::-webkit-scrollbar {
+    width: 0.6em;
+}
+
+.cssHelpPage::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssHelpPage::-webkit-scrollbar-track {
+    background-color: #06232e;
+}
+
+.cssHelpPage::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssHelpPage::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssHelpPage::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+.cssSettings > .cssBackup h1 {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.cssSettings > .cssBackup p {
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.8;
+    padding-right: 20px;
+}
+
+.cssSettingsBackup ol li {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1);
+    /*    opacity: 0.8;*/
+}
+
+.cssSettings.cssCreate .cssFill {
+    background-color: #ff6c0e;
+    height: 0;
+}
+
+.cssSettings.cssCreate .cssProgress {
+    height: 240px;
+    width: 240px;
+}
+
+.cssSettings.cssSplash .cssLogo {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.cssSettings .cssButton {
+    /*  background-color: #aaa;*/
+    /*  border: 3px solid #aaa;*/
+    border: 3px solid rgba(36,121,188,0.35);
+    color: rgba(36,121,188,0.35);
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cssSettingsBackup .cssButton {
+    border: 3px solid #0e455c;
+    color: #0e455c;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cssSettingsBackup .cssGreyButtonWide {
+    border: 3px solid rgba(21,151,255,0.35);
+    color: rgba(21,151,255,0.35);
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 250px;
+    font-size: 12px;
+    text-transform: uppercase;
+   
+}
+
+.cssSettings .cssGreyButton {
+    border: 3px solid #0e455c;
+    color: #0e455c;
+    border-radius: 5px;
+    cursor: none;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cssSettingsMnemonic .cssGreyButton {
+    border: 2px solid #0e455c;
+    color: #0e455c;
+    border-radius: 5px;
+    cursor: none;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.cssSettings .cssButton.cssEnabled {
+    border: 1px solid #1597FF;
+    color: #1597FF;
+    /*  border: 3px solid #051b24;*/
+}
+
+.cssSettings .cssButton.cssEnabled:active {
+    background-color: #1597FF;
+    color: #fff;
+}
+
+
+.cssSettings.cssSplash .cssButton {
+    margin-bottom: 25px;
+    height: 60px;
+    line-height: 60px;
+    width: 250px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #2479BC;
+}
+
+.cssSettings textarea {
+    margin-bottom: 24px;
+}
+
+.cssSettings .cssInput {
+    margin-bottom: 24px;
+}
+
+.cssSettings .cssSettingsPinPad {
+    background-color: #303B48;
+    width:100%;
+}
+
+.cssSelectable {
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.cssSpendable {
+    margin-top: 10px;
+    font-size: 13px;
+    display: inline-block;
+    width: 100%;
+    /*
+    vertical-align:middle;
+    line-height: 20px;
+    */
+}
+.cssShapeShift {
+    /*    display: none !important;*/
+    padding-top: 10px;
+    font-size: 13px;
+}
+.cssSpendableHeader {
+    position: relative;
+}
+.cssShapeShiftBtn {
+    background: url('img/shapeshift_64x64.png');
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    height: 26px;
+    width: 26px;
+    top: -3px;
+    margin-left: 12px;
+    background-size: cover;
+    display: inline-block;
+    /*    border: 0.5px solid #fff;*/
+}
+.cssShapeShiftBtn:hover {
+    background: url('img/shapeshift_64x64_v2.png');
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    height: 26px;
+    width: 26px;
+    top: -3px;
+    margin-left: 12px;
+    background-size: cover;
+    /*    border: 0.5px solid #fff;*/
+}
+.cssShapeShiftBtn:focus {
+    outline: none;
+}
+.cssShapeShift .cssShapeShiftPannel {
+    background-image: url('img/shapeshift_full.png');
+    background-size: 95%;
+    height: 23px;
+    width: 100px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.cssShapeShiftInfo {
+    /*    display: none !important;*/
+    /*    font-size: 0.63em;*/
+    font-size: 2.9vw;
+    text-align: center;
+}
+.cssShapeShiftInfo span {
+    display: inline-block;
+    margin-top: 0.8em;
+}
+.cssShapeShiftInfo .cssLastSpan:before {
+    content: '';
+    width: 0;
+    height: 26px;
+    border: 1px solid rgba(136,144,175,0.3);
+    /*    border: 0.2px solid #777;*/
+    display: inline-block;
+}
+.cssShapeShiftInfo span ul {
+    margin: 0;
+}
+.cssShapeShiftInfo .cssRates .cssBefore {
+    float: left !important;
+    text-align: left;
+}
+.cssShapeShiftInfo .cssRates .cssMiddleSpan {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left !important;
+}
+.cssShapeShiftInfo .cssRates .cssMiddleSpan:before {
+    content: '';
+    width: 0;
+    height: 26px;
+    border: 1px solid rgba(136,144,175,0.3);
+    display: inline-block;
+}
+.cssShapeShiftInfo .cssRates .cssLastSpan {
+    float: right !Important;
+    text-align: left;
+}
+.cssShapeShiftInfo .cssRates {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    /*    text-align: left;*/
+}
+.cssShapeShiftInfo span ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em;
+}
+.cssShapeShiftInfo .cssShapeShiftLogo {
+    background-image: url('img/shapeshift_64x64.png');
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+    float: left;
+    margin-top: 0.6em;
+    margin-left: 0.3em;
+}
+.cssInfo {
+    background-image: url('img/info.png');
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin-top: 1px;
+    margin-right: 0.3em;
+    cursor: pointer;
+}
+/* Style for shapeShift Info modal window */
+.cssShiftInfo .cssContent {
+    padding-bottom: 15px;
+}
+.cssModal.cssShiftInfo .cssItem p {
+    font-size: 0.8em;
+    text-align: center;
+}
+.cssModal.cssShiftInfo ul {
+    margin-top: 1em;
+    list-style: decimal;
+    font-size: 0.85em;
+}
+.cssModal.cssShiftInfo li {
+    margin-bottom: 0.5em;
+}
+.cssShiftInfo .cssButtons {
+    margin-bottom: 5px;
+}
+.cssShiftInfo .cssShiftLogo {
+    background-image: url('img/shapeshift_64x64.png');
+    background-size: cover;
+    height: 45px;
+    width: 40px;
+    float: left;
+    margin-right: 1em;
+    margin-left: 0.5em;
+}
+.cssShiftInfo .cssItem .cssLeft{
+    text-align: left !important;
+    padding-right: 0.5em;
+}
+/* Style for shapeShift Info modal window ends */
+/* Style for ShapeShift Confirmation modal window */
+.cssModal .cssInto {
+    margin-top: 0.5em;
+}
+.cssShift .cssNotice p {
+    font-size: 12px;
+    line-height: 1.5em;
+    margin-top: 0.5em;;
+}
+.cssShift .cssButtons .cssButton {
+    width: 124px
+}
+.cssShift .cssContent {
+    padding-bottom: 10px;
+}
+/* Style for ShapeShift confirmation modal window ends */
+
+/* Syle for Confrimation Modal*/
+table.cssTableMiningFee {
+    width: 100%;
+}
+tr.cssMiningTitles {
+    font-size: .7em;
+    text-align: center;
+    height: 20px;
+}
+tr.cssMiningCheckBoxes {
+    height: 10px;
+}
+.cssMiningCheckBoxes td {
+    height: 20px;
+}
+.cssButtonGroup tr td{
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 32.5%;
+    border-bottom: 1px solid #3a414f;
+    text-align: center;
+}
+
+.cssButtonGroup tr td:after {
+    clear:both
+}
+.cssButtonGroup tr td input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+/*    margin-top: 20px;*/
+}
+
+.cssButtonGroup tr td label{
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 0px 0px 0px 0px;
+    margin: 0px auto;
+    height: 15px;
+    z-index: 9;
+    cursor: pointer;
+    width: 50px;
+    
+}
+
+
+.cssButtonGroup tr td .check{
+    display: block;
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    left: 43%;
+    top: 0px;
+    z-index: 5;
+}
+
+.cssButtonGroup tr td .check:after{
+    clear: both
+}
+
+.cssButtonGroup tr td:hover .check {
+    border: 1px solid #299E5E;
+}
+
+.cssButtonGroup tr td .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    top: 5px;
+    left: 5px;
+    margin: auto;
+}
+
+.cssButtonGroup input[type=radio]:checked ~ .check {
+    border: 1px solid #299E5E;
+}
+
+
+.cssButtonGroup input[type=radio]:checked ~ .check::before{
+    background: #299E5E;
+    height: 10.5px;
+    width: 11px;
+    top: 2px;
+    left: 2.3px;
+}
+
+.cssButtonGroup input[type=radio]:after {
+    clear: both;
+}
+.cssButtonGroup h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.cssButtonGroup p {
+    color: #98a9b1;
+    padding-left: 20%;
+    text-align: center;
+}
+.cssMiningFeeText {
+    font-size: 1.4em;
+    color: #299E5E;
+    width: 50%;
+    margin: 15px auto;
+}
+.cssMiningFeeExtraText p {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    text-align: center;
+}
+
+
+p.cssCustomLabelMiningFee {
+    color: white;
+}
+
+/*Style for Confirmation Modal ends*/
+
+
+
+.cssShiftInfo .cssItem {
+    margin-top: 1em;
+}
+.cssMax {
+    display: inline;
+    margin-left: 5px;
+    background-color: #2681FF;
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cssMax:hover {
+    background-color: #25B0EA;
+}
+
+.cssSuccess {
+    background-color: #21424f;
+    width: 100%;
+    height: 69px;
+    padding-top: 2px;
+    margin-top: -3px;
+}
+
+.cssSuccess h1 {
+    color: #f06811;
+    font-size: 15px;
+    text-align: center;
+}
+
+.cssSuccess p {
+    color: #fff;
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.sweepPrivateKey.cssSettings p {
+    /*
+    color: #a1a1a1;
+    opacity: 1.0;
+    */
+}
+
+.cssVerifyStyle {
+    padding-left: 20px;
+    color: #a1a1a1;
+}
+
+.cssVerifyStyle h1 {
+    font-size: 15px;
+    text-align: left;
+    font-weight: 100;
+    color: #fff;
+}
+
+.cssVerifyStyle p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.cssPageAddress {
+    background-color: #092d3c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 10pt;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 2px;
+    padding-left: 9px;
+    border-radius: 2px;
+    border-bottom: 1px solid #19475b;
+    /*    background-color: #fff;*/
+    /*    color: #1a1a1a;*/
+    /*    border: 1px solid #bbb;*/
+}
+
+.cssPageAddress:hover {
+    /*  background-color: #dfdfdf;*/
+    background-color: #4BBDEC;
+}
+
+.cssProfile .cssContent {
+    margin: auto;
+    width: 70%;
+    margin-top: 230px;
+    padding-bottom: 30px;
+}
+
+.cssProfile h1 {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 0vh;
+}
+
+/*Scrollbar Style*/
+
+.table::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.table::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.table::-webkit-scrollbar-track {
+    background-color: #191F27;
+
+}
+
+.table::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.table::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.table::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+
+
+.cssOneNameTwitterProfile .cssAvatar {
+    border: 2px solid #888;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+/* Loading Spinner */
+
+.cssShiftingProgress {
+    border-radius: 50%;
+    margin-top: 14%;
+    margin-left: 7%;
+    position:absolute; 
+    width: 10px; 
+    height: 10px;
+/*    font-size: 4px;*/
+    text-indent: -9999em;
+    border-top: 0.2em solid #F27322;
+    border-right: 0.2em solid #F27322;
+    border-bottom: 0.2em solid #F27322;
+    border-left: 0.2em solid #FFC39D;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+.loader {
+    margin: 60px auto;
+    font-size: 4px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.6em solid #F27322;
+    border-right: 1.6em solid #F27322;
+    border-bottom: 1.6em solid #F27322;
+    border-left: 1.6em solid #FFC39D;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.cssModal .cssLoading {
+    background-color: #303B48;
+    border-radius: 6px;
+    margin-top: 37px;
+    padding: 15px;
+    padding-bottom: 5px !important;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Loading Spinner Ends */
+
+
+/* Scrollbar Style Ends */
+
+
+/*For Tablet Version Only*/
+
+.cssTabletBalance {
+    display: inline-block;
+}
+
+.cssTabletLeft {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+
+.cssTabletRight {
+    float: right;
+    width: calc(50% - 1px);
+    margin-top: 43px;
+    border-top: solid 1px rgba(136,144,175,0.3);
+    border-left: solid 1px rgba(136,144,175,0.3);
+}
+
+.cssTabletQR {
+    margin-top: 25px;
+}
+
+.cssFiatCurrencySelectionMenu {
+    height:	100%;
+    margin-left: 10px;
+    margin-top: 5px;
+    z-index: 1;
+    border-radius: 6px;
+    /*direction:rtl;*/
+}
+
+.cssFiatCurrencySelectionMenu tr {
+    display: table-row;
+    line-height: 40px;
+    padding-top: 0px;
+    cursor: pointer;
+}
+
+.cssFiatCurrencySelectionMenu tr:hover {
+    background-color: #54739D;
+}
+
+.cssFiatCurrencySelectionMenu .cssCurrencyFirstElement {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #303B48;
+    width: 100%;
+}
+.cssFiatCurrencySelectionMenu .cssCurrencyAdditionalElement {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(136,144,175,0.3);
+    background-color: #303B48;
+    text-align: center;
+    width: 100%;
+}
+
+.cssFiatCurrencySelectionMenu .cssFiatUnit {
+    width:40%;
+    text-align: left;
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+.cssFiatCurrencySelectionMenu .cssConvertedBalance {
+    width:60%;
+    text-align: left;
+    padding-top: 0px;
+    padding-left: 3px;
+}
+
+.cssFiatCurrencySelectionMenu .cssBlueHighlight{
+    background-color: #2681FF !important;
+}
+
+.portraitCurrency {
+    display: block;
+}
+
+.portraitCurrency .cssDisplayCurrenciesArrow {
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.portraitCurrency .cssDisplayCurrenciesArrow img{
+    height: 18px;
+    width: 18px;
+}
+
+.portraitCurrency .cssDisplayCurrenciesArrow .cssFlipped{
+    -moz-transform: scaleY(-1) !important;
+    -o-transform: scaleY(-1) !important;
+    -webkit-transform: scaleY(-1) !important;
+    transform: scaleY(-1) !important;
+    filter: FlipV !important;
+    -ms-filter: "FlipV" !important;
+}
+
+.cssSettings.cssSetCurrency .cssList tbody{
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+}
+
+.cssTableFiatCurrencySelectionMenu {
+    border: none;
+    width: 100%;  
+    border-collapse: collapse;
+    margin: 0 auto;
+    /*	margin-left: 35px;*/
+
+}
+
+.cssWrapTableCurrencySelectionMenu {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 300px;
+    max-height: 215px;
+    display: none;
+    margin-left: 35px;
+    background: #2f3a47;
+    z-index: 10;
+    position: absolute;
+    top: 300px;
+    /*    border-radius: 5px;*/
+}
+
+.cssTableShapeshiftCoinSelectionMenu { /* .cssWrapTableCurrencySelectionMenu table { */
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    /* margin-left: 35px; */
+}
+
+.cssShapeshiftCoinSelectionMenu { /*.cssWrapTableCurrencySelectionMenu table tbody { */
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 5px;
+    z-index: 1;
+    border-radius: 6px;
+    /* direction: rtl; */
+}
+
+.cssShapeshiftCoinSelectionMenu tr { /* @TODO: get it working with rows */
+    display: table-row;
+	height: 40px;
+    line-height: 40px;
+    padding-top: 0px;
+	background-color: #303B48;	
+    cursor: pointer;
+}
+.cssShapeshiftCoinSelectionMenu tr:hover {
+    background-color: #54739D;
+}
+
+.cssShapeshiftCoinSelectionMenu .cssAdditionalElement {
+	border-top: 1px solid rgba(136,144,175,0.3);
+}
+
+.cssWrapTableCurrencySelectionMenu table tbody tr td{
+	
+}
+
+.cssDismissCurrencySelectionMenu {
+    width: 150%;
+    height: 20%;
+    display: none;
+    left: 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.cssPortraitQRCode {
+    float: left;
+    position: fixed;
+    right: 20px;
+/*    z-index: 1;*/
+}
+
+.cssCurrency {
+    height: 250px;
+}
+
+
+/* DAO refund*/
+
+.csstheDaoPageRefundButton {
+    color: #fff;
+    background-color: #2681FF;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    width: 250px;
+}
+
+.transactionsTheDAOEthereum p {
+    font-size: 0.8em;
+    line-height: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/*Tablet Version Ends*/
+
+/*Tablet Media Queries*/
+
+@media screen and (min-width: 700px) {
+    .cssBalanceBox .cssBitcoinAmount {
+        font-size: 30pt;
+    }
+
+    .portraitCurrency .cssDisplayCurrenciesArrow {
+        display: inline-block;
+        float: none;
+    }
+    .cssCodeAddress {
+        font-size: 13pt;
+        font-weight: 500;
+        display: inline-block;
+    }
+    .cssHeaderForAddress p {
+        font-size: 1em !important;
+    }
+    .cssScrollHeaderContainer {
+        max-width: 345px;
+/*        width: 310px;*/
+        margin: 0 auto;
+    }
+}
+
+.cssLandscapePopulateBalanceFiatFix {
+    display: inline-block !important;
+    float: none !important;
+}
+
+.cssFloatNoneOverride {
+    float:none !important;
+}
+
+.cssNoSizeOverride {
+    width: 0px !important;
+    height: 0px !important;
+}
+
+.cssZeroMarginLeftOverride {
+    margin-left: 0px !important;
+}
+
+.cssPortraitQRCodeLandscapeOverride {
+    float: none;
+    position: initial;
+    display: none !important;
+}
+
+.cssBalanceBox .cssBalance {
+    padding-bottom: 15px;
+}
+
+.populateQRCode {
+    width: 117px;
+    height: 117px;
+}
+
+.cssLandscapeQRSizing {
+    width: 192px !important;
+    height: 192px !important;
+}
+
+/* PIN pad */
+
+.cssPinEntry {
+
+}
+
+.cssPinPad {
+    background-color: #303B48;
+    border-radius: 6px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: sans-serif;
+    color: #1597FF;
+    width: 233px;
+    height: 350px;
+    margin: auto;
+}
+
+.cssInputPIN {
+    width: 100%;
+    height: 25%;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+.cssInputPIN .cssPinEntry {
+    padding: 1px 1px;
+    border: 1px solid #3498db;
+    margin: 5px;
+    color: #3498db;
+    width: 15%;
+    height: 40%;
+    text-align: center;
+}
+
+.cssInputPIN p {
+    color: #fff;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.cssInputPIN input {
+    font-size: 25px;
+}
+
+
+.cssPinContainer {
+    /*
+    -webkit-transform:scale(0.55);
+    -moz-transform:scale(0.55);
+    -ms-transform:scale(0.55);
+    transform:scale(0.55);
+    */
+    /*  margin-top: -90px;*/
+    padding-top: 10px;
+    width: 233px;
+    height: 350px;
+    position: relative;
+    /*  border: .5px solid #1597FF;*/
+    box-shadow: 0 3px 6px rgba(25,31,39,0.20), 0 3px 6px rgba(25,31,39,0.23);
+    /*    box-shadow: 0 10px 20px rgba(25,31,39,0.19), 0 6px 6px rgba(25,31,39,0.23);*/
+    background-color: #54739D;
+}
+
+.cssNumPad {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: calc(75% - 70px);
+}
+
+.cssNumPad li {
+    font-size: 25px;
+    float: left;
+    list-style: none;
+    text-align: center;
+    height: 25%; /* note: needs to be programatically set up */
+    padding-top: 10px;
+    width: 33.3%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+
+    background: rgba(0,0,0,0);
+    color: #fff;
+}
+
+.cssNumPad li:hover {
+    background: #3498db;
+    color: #ccc;
+}
+
+.cssNumPad li:active {
+    background: #2479BC;
+    color: #ccc;
+}
+
+.cssNumPad li span {
+    top: 5px;
+    position: relative;
+}
+
+.cssNumPadFunctionalKey {
+    font-size: 18px !important;
+}
+
+.cssNumPadFunctionalKey span {
+    top: 10px !important;
+}
+
+.cssAbout {
+    width: 100%;
+    height: calc(100% - 236px);
+    overflow-y: auto;
+    background-color: #191F27;
+}
+
+.cssVersion {
+    box-shadow: 0 1px 3px rgba(48,59,72,0.12), 0 1px 2px rgba(48,59,72,0.24);
+}
+
+.cssVersion p {
+    height: 0px;
+    font-size: 10pt;
+    padding-bottom: 2px;
+    line-height: 1px;
+}
+
+.cssVersion .cssAboutInfo {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.cssChangeLog {
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.cssChangeLogCenter {
+    width: 61%;
+    margin: 0 auto;
+}
+
+.cssChangeLog h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff7200;
+    padding-bottom: 15px;
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.cssChangeLog h3 {
+    margin-left: 20px;
+}
+
+.cssChangeLog p {
+    text-align: left;
+    color: #eee;
+}
+
+.cssSmallLetter {
+    font-size: 10pt;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+/* Scrollbar for Changelog */
+
+.cssChangeLog::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.cssChangeLog::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssChangeLog::-webkit-scrollbar-track {
+    background-color: #191F27;
+}
+
+.cssChangeLog::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssChangeLog::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssChangeLog::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+/* scrollbar for Changelog ends */
+/* PIN pad ends */
+
+.cssSpendableMax {
+    float: left;
+}
+
+/* Advanced Tab */
+.cssSpendable div:first-child {
+    line-height: 20px;
+    vertical-align:middle;
+}
+.cssAdvancedTabButton {
+    display: inline-block;
+    /*
+    background-color: #17a1db;
+    padding: 3px 3px 3px 3px;
+    border-radius: 3px;
+    */
+    line-height: 0;
+    cursor: pointer;
+    font-size: 0px;
+    float: right;
+}
+.cssAdvancedTabButton img {
+    height: 20px;
+    width: 20px;
+    padding-top: 1px;
+}
+
+.cssAdvancedTabButton:hover {
+    background-color: #25B0EA;
+}
+
+.cssAdvancedTabContentEthereum {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.cssAdvancedTabContentEthereum .input input {
+    width: 100%;
+}
+
+.cssGasPrice {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.cssAdvancedSettings {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    background-color: #303B48;
+    /*    padding: 5px 5px 5px 5px;*/
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+}
+.cssCustomData {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}/* scrollbar for Changelog ends */
+
+.cssBackupPrivateKeyList {
+    background: #FFFFFF;
+    width: calc(100% - 40px) !important;
+    height: 100%;
+
+    font-style: sans;
+    font-size: 14px;
+    font-weight: 300;
+
+    overflow-x: none;
+    overflow-y: auto;
+
+    padding: 20px;
+
+    resize: none;
+}
+
+.cssBackupPrivateKeyListLegacy {
+    background: #FFFFFF;
+    width: calc(100% - 40px) !important;
+    height: 20px !important;
+
+    font-style: sans;
+    font-size: 14px;
+    font-weight: 300;
+
+    overflow-x: none;
+    overflow-y: auto;
+
+    padding: 20px;
+
+    resize: none;
+}
+/* Scrollbar for Private Key List */
+
+.cssBackupPrivateKeyList::-webkit-scrollbar {
+    width: 0.8em;
+}
+
+.cssBackupPrivateKeyList::-webkit-scrollbar-arrow-color {
+    background-color: red;
+}
+
+.cssBackupPrivateKeyList::-webkit-scrollbar-track {
+    background-color: #191F27;
+
+}
+
+.cssBackupPrivateKeyList::-webkit-scrollbar-thumb {
+    background-color: rgba(84,115,157,0.5);
+    border-radius: 10px;
+}
+
+.cssBackupPrivateKeyList::-webkit-scrollbar-thumb:hover {
+    background-color: #1d5168;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+
+.cssBackupPrivateKeyList::-webkit-scrollbar-thumb:active {
+    background-color: #303B48;
+    border-radius: 10px;
+    border: 1px #102b37 solid;
+}
+
+.cssSweepEntryInput {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cssGasLimitSuggestion {
+    font-weight: 400;
+    float:right;
+}
+
+@media only screen and (min-width: 375px) {
+    .cssBalanceBox .cssQRCode {
+        height: 110px;
+        width: 110px;
+    }
+    .cssBalanceBox .cssBitcoinAmount {
+        font-size: 23pt;
+    }
+    .cssBalanceBox .cssBitcoinIntro {
+        font-size: 15pt;
+    }
+    .cssBalanceBox .cssEthereumAmountSuperscript {
+        font-size: 15pt;
+        margin-top: 11px;
+    }
+    .cssModal .cssContent .cssDaoRefund {
+        height: 415px;
+        border-bottom: 1px solid rgba(136,144,175,0.3);
+    }
+    .transactionsTheDAOEthereum p {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .cssTableHeader {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .cssSettings.cssSetCurrency .cssList .cssCurrency {
+        font-size: 15px;
+    }
+    .cssDaoRefundDisplayAddress {
+        font-size: 12px !important;
+    }
+    .cssModal .cssItem .cssWarningWindowDaoRefund {
+        font-size: 12px;
+    }
+    .cssModal .cssItem .cssWarningWindowDaoRefund p {
+        font-size: 14px;   
+    }
+}
+@media only screen and (min-height: 568px) {
+    .cssKeysPrice {
+        height: calc(100% - 305px);
+    }
+    .cssWrapperEthPrivateKeys {
+        height: calc(100% - 325px);
+    }
+}
+@media only screen and (min-height: 667px) {
+    .cssKeysPrice {
+        height: calc(100% - 290px);
+    }
+    .cssWrapperEthPrivateKeys {
+        height: calc(100% - 290px);
+    }
+}
+@media only screen and (min-height: 736px) {
+    .cssKeysPrice {
+        height: calc(100% - 270px);
+    }
+}
+@media only screen and (min-height: 768px) {
+    .cssKeysPrice {
+        height: calc(100% - 230px);
+    }
+    .cssWrapperEthPrivateKeys {
+        height: calc(100% - 235px);
+    }
+}
+
+/*
+.cssEthereumLegacySweepModal {
+top: -46px !important;
+}
+*/
+
+.cssEthereumLegacySweepModalContent {
+    padding-bottom: 2px !important;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    #slider {
+        width: 780px;
+        margin: 0 auto;
+    }
+    .cssShapeShiftInfo .cssRates span {
+        margin-left: 0em !important;
+        margin-right: 0em !important;
+    }
+    .cssShapeShiftInfo .cssRates .cssBefore {
+        width: 35%;
+    }
+    .cssShapeShift .cssShapeShiftPannel {
+        background-size: 85%;
+    }
+    .cssCurrencyToggleFirst {
+        font-size: 0.8em;
+        bottom: 5px;
+    }
+    .cssShapeShiftTogglelist {
+        margin-left: 51px;
+        margin-bottom: 2px;
+    }
+    .cssCurrencyToggleSecond {
+        left: 205px;
+        font-size: 0.8em;
+        bottom: 5px;
+    }
+    .cssSSToggle + .cssSSTogglBtn:after, .cssSSToggle + .cssSSTogglBtn:before {
+        width: 46%;
+    }
+    .cssSSToggle + .cssSSTogglBtn {
+        width: 3.4em;
+        height: 1.6em;
+    }
+    .cssInfo {
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+    .cssShapeShiftInfo span ul {
+        padding-left: 0.3em !important;
+        padding-right: 0.3em;
+    }
+    .cssButtonGroup tr td .check {
+        left: 45%;
+    }
+/*
+    .cssLogoBanner .cssScrollHeaderContainer {
+        width: 345px !important;
+    }
+*/
+    .cssSettings.cssSetCurrency .cssList .rate {
+        right: 105px;
+    }
+
+/*
+    div.imageLogoBannerDSH {
+        margin-left: 55px !important;
+    }
+*/
+    
+    .cssButtonGroup tr td .check {
+        left: 45%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .cssProceedCountDown {
+        margin-left: auto;
+    }
+    .cssLimit-decimal {
+        font-size: 16px !important;
+    }
+    .material-design-hamburger {
+        right: 4.2% !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .cssCoinSelector {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .cssShapeShiftPannel {
+        
+    }
+    .cssEthereumLegacySweepModalContent {
+        width: inherit;
+    }
+    .cssShapeShiftInfo .cssRates .cssBefore {
+        width: 45%;
+    }
+    .cssShapeShift .cssShapeShiftPannel {
+        background-size: 85%;
+        width: 85px !important;
+    }
+    div.imageLogoCurrencyToCurrency {
+        width: 39px;
+    }
+    .cssCoinText {
+        margin-top: 3px;
+        margin-left: 18px;
+        padding-left: 5px;
+    }
+    .cssShapeShiftAndToggle .cssArrowcoinToCoin {
+        margin-top: 5px;
+    }
+    .cssShapeShift .cssDisplayCoinsArrow img {
+        height: 18px;
+        width: 18px;
+        margin-bottom: 4px;
+    }
+    .cssShapeShiftTogglelist {
+        margin-left: 51px;
+        margin-bottom: 2px;
+}
+    .cssCurrencyToggleSecond {
+        left: 205px;
+        font-size: 0.8em;
+        bottom: 5px;
+    }
+    .cssSSToggle + .cssSSTogglBtn:after, .cssSSToggle + .cssSSTogglBtn:before {
+        width: 46%;
+    }
+    .cssSSToggle + .cssSSTogglBtn {
+        width: 3.4em;
+        height: 1.6em;
+    }
+    .cssInfo {
+        background-size: 90%;
+        background-repeat: no-repeat;
+        margin-top: 0.05em;
+    }
+    .cssShapeShift .cssDisplayCoinsArrow {
+        margin-left: 5px;
+    }
+    .cssShapeShiftInfo span ul {
+        padding-left: 0.3em !important;
+        padding-right: 0.3em;
+    }
+    .cssContent .cssShapeShiftInfoModal p {
+        line-height: 1.3em;
+        font-size: 12px;
+    }
+
+    .cssButtonGroup tr td .check {
+
+        left: 41%;
+    }
+    .cssLimit-decimal {
+        font-size: .85em !important;
+    }
+    .cssSettings.cssSetCurrency .cssList .cssCurrency {
+        position: relative;
+        font-size: 14px;
+    }
+    .cssWrapTableCurrencySelectionMenu {
+        width: 245px;
+    }
+    .cssDaoRefundDisplayAddress {
+        font-size: 10px;
+    }
+    .cssModal .cssDAORefundOuter p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .cssModal .cssItem .cssWarningWindowDaoRefund {
+        font-size: 10px;
+    }
+    .cssModal .cssItem .cssWarningWindowDaoRefund p{
+        font-size: 12px;
+    }
+    .cssModal .cssDaoRefund {
+        max-height: 320px !important;
+    }
+    .cssMenu .cssMenuWindowOptions .cssMenuWindowOptionItem {
+        font-weight: 200;
+        margin-left: 8px;
+        margin-right: 8px;
+        color: rgba(255,255,255,0.4);
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    }
+    div.imageLogoBannerSVG {
+        height: 21px !important;
+        width: 42px !important;
+    }
+    .cssCoinButtonDAOText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    .cssCoinButtonETHText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    .cssCoinButtonBTCText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    .cssCoinButtonDASHText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    .cssCoinButtonETCText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    .cssCoinButtonREPText {
+        top: 3px;
+        margin-left: 14px;
+    }
+    /*
+    .cssCoinSelector {
+        font-size: 10px;
+        height: 15px;
+        width: 36px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }*/
+    .cssScrollHeaderContainer {
+        width: 206px !important;
+    }    
+    .cssCoinBannerWrapper {
+        width: 147px !important;
+    }
+    .cssLogoBanner .cssScrollHeaderContainer .cssLeftArrow {
+        margin-right: 6px;
+    }
+    .cssLogoBanner .cssScrollHeaderContainer .cssRightArrow {
+        margin-left: 6px;
+    }
+    
+    
+    
+/*
+    .cssLogoBanner .cssScrollHeaderContainer .cssLeftArrow {
+        margin-left: 10px !important;
+    }
+*/
+    /*=== Slider for menu header ===*/
+    .material-design-hamburger {
+        right: 56px !important;
+    }
+    .cssShapeShiftAndToggle .cssCurrencyToggleFirst {
+        margin-left: -6px;   
+    }
+    div.imageLogoCurrencyToCurrency {
+        width: 55px !important;
+        margin-bottom: 2px !important;
+    }
+    .cssWrapTableShapeshiftCoinMenu {
+        width: 200px !important;
+        left: 110px !important;
+        font-size: 14px;
+    }
+    .cssImageLogoIconBTC.cssHighlighted .image {
+        height: 34px;
+    }
+    .cssShapeshiftCoinSelectionMenu tr {
+        height: 31px;
+        line-height: 45px;
+    }
+    .cssTheDaoRefundAddresses {
+        font-size: 11px;
+    }
+    .cssModal .etcEthSplitEthAddress, .etcEthSplitEtcAddress {
+        font-size: 10px;
+    }
+    
+}
+@media only screen and (max-height: 480px) {
+
+    .cssQRCode {
+        border: 0px solid white;    
+    }
+    .cssSettings > .cssItem {
+        padding-bottom: 10px;
+    }
+    .cssWrapTableCurrencySelectionMenu {
+        max-height: 158px;
+    }
+    .cssModal .cssDaoRefund {
+        max-height: 270px !important;
+    }
+    .cssEtcEthSplit .cssDAORefundOuter {
+        padding-top: 15px !important;
+    }
+    .cssModal .cssItem.cssDaoRefund {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    .cssModal .cssButtons {
+        margin: 0;
+    }
+    .cssModal .cssDaoRefund {
+        max-height: 287px !important;
+    }
+}
+
+.cssETHLegacyWarning {
+    color: orangered;
+}
+
+.cssETHLegacyTX {
+    color: #299E5E;
+}
+
+@media only screen and (min-width: 414px) {
+    .cssButtonGroup ul li .check {
+        left: 58px;
+        top: 32px;
+    }
+    
+    .cssButtonGroup input[type=radio]:checked ~ .check::before {
+        top: 2px;
+        left: 12%;
+    }
+    
+    table.cssTableMiningFee {
+        max-width: 414px;
+        margin: 0 auto;
+    }
+    .cssWrapTableCurrencySelectionMenu {
+        margin-left: 55px;
+    }
+}
+.cssEthereumLegacySweepModal .cssEthereumLegacySweepModalContent .cssModalBody ul {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+@media only screen and (min-width: 400px) {
+    .cssShapeShiftInfo {
+        font-size: 0.75em;
+    }
+    .cssShapeShiftInfo .cssRates {
+        text-align: center;
+    }
+    .cssButtonGroup ul li .check {
+        left: 57px;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    .cssShapeShiftInfo .cssRates span {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+}
+
+.cssWrapTableShapeshiftCoinMenu {
+	overflow-y: auto;
+	display: none;
+	overflow-x: hidden;
+    width: 260px;
+    max-height: 215px;
+    margin-left: 35px;
+    background: #2f3a47;
+    z-index: 10;
+    position: absolute;
+    top: 260px;
+	left: 122px;
+}
+	
+.cssLogoBanner .cssScrollHeaderContainer {
+    font-weight: 200;
+    width: 214px;
+    overflow: hidden;
+    height: 30px;
+    /* position: absolute; */
+    /* margin-left: 70px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+.cssLogoBanner .cssScrollHeaderContainer .cssLeftArrow {
+/*    margin-right: 5px;*/
+	width: 12px;
+	height: 18px;
+    cursor: pointer;
+	float: left;
+    padding-left: 12px;
+}
+
+.cssLogoBanner .cssScrollHeaderContainer .cssRightArrow {
+    margin-left: 5px;
+	width: 12px;
+	height: 18px;
+	float: left;
+    cursor: pointer;
+/*    margin-left: 10px;*/
+    padding-right: 12px;
+}
+.cssCoinBannerContainer {
+    /*height: 100%;*/
+}
+
+.cssSlidingFromLeft {
+	display: none !important;
+}
+
+.cssShapeShiftAndToggle .imageLogoBannerBTC span {
+	
+}
+
+.cssShapeshiftSwitchTo {
+	float: left;
+}
+
+.cssShapeShiftswitchFrom {
+	float: left;
+}
+
+.cssShapeshiftCoinSelectionMenu .cssBlueHighlight{
+    background-color: #2681FF !important;
+}
+
+.cssImageLogoBannerBTC.cssHighlighted {
+	background: url("images/bitcoin-here.svg") center center no-repeat !important;
+	/* don't add any more styles here please */
+}
+.cssImageLogoBannerETH.cssHighlighted {
+	background: url("images/ether-new.svg") center center no-repeat !important;
+	/* don't add any more styles here please */
+}
+.cssImageLogoBannerETC.cssHighlighted {
+    background: url("images/ether-classic-new.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+.cssImageLogoBannerDAO.cssHighlighted {
+	background: url("images/DAOlogo.svg") center center no-repeat !important;
+	/* don't add any more styles here please */
+}
+.cssImageLogoBannerDASH.cssHighlighted {
+	background: url("images/dash-here.svg") center center no-repeat !important;
+	/* don't add any more styles here please */
+}
+.cssImageLogoBannerREP.cssHighlighted {
+    background: url("images/REPlogo.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+.cssImageLogoBannerLTC.cssHighlighted {
+    background: url("images/litecoin-here.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+.cssImageLogoBannerLSK.cssHighlighted {
+    background: url("images/lisk-here.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+.cssImageLogoBannerZEC.cssHighlighted {
+    background: url("images/zcash-here.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoBannerTESTNET_RSK.cssHighlighted {
+    background: url("images/rootstock-here.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoBannerRSK.cssHighlighted {
+    background: url("images/rootstock-here.svg") center center no-repeat !important;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconBTC.cssHighlighted .image{
+	background: url("images/bitcoin-here.svg") center center no-repeat !important;
+	max-width:40px;
+	width: 40px;
+	height: 40px;
+	/* don't add any more styles here please */
+}
+.cssImageLogoIconETH.cssHighlighted .image{
+	background: url("images/ether-new.svg") center center no-repeat !important;
+	max-width:40px;
+	width: 40px;
+	height: 40px;
+	/* don't add any more styles here please */
+}
+.cssImageLogoIconDAO.cssHighlighted .image{
+	background: url("images/DAOlogo.svg") center center no-repeat !important;
+	max-width:40px;
+	width: 40px;
+	height: 40px;
+	/* don't add any more styles here please */
+}
+
+.cssImageLogoIconDASH.cssHighlighted .image{
+	background: url("images/dash-here.svg") center center no-repeat !important;
+	max-width:40px;
+	width: 40px;
+	height: 40px;
+	/* don't add any more styles here please */
+}
+.cssImageLogoIconETC.cssHighlighted .image{
+    background: url("images/ether-classic-new.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconREP.cssHighlighted .image{
+    background: url("images/REPlogo.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconLTC.cssHighlighted .image{
+    background: url("images/litecoin-here.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconLSK.cssHighlighted .image{
+    background: url("images/lisk-here.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconZEC.cssHighlighted .image{
+    background: url("images/zcash-here.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssImageLogoIconRSK.cssHighlighted .image{
+    background: url("images/rootstock-here.svg") center center no-repeat !important;
+    max-width:40px;
+    width: 40px;
+    height: 40px;
+    /* don't add any more styles here please */
+}
+
+.cssShapeShiftCoinListItem .icon {
+	height: 100%;
+	width: 2px;
+	padding-left: 15px;
+	max-width: 25px;
+}
+
+.cssShapeShiftCoinListItem .icon .span {
+	background-size: 20px;
+}
+
+.cssShapeShiftCoinListItem .label {
+	width: 200px;
+	height: 100%;
+}
+
+.cssCoinBannerWrapper {
+    float: left;
+    width: 178px;
+    border: 0;
+    padding: 0;
+    overflow-x: scroll;
+    height: 40px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.cssCoinBannerContainer {
+    height: 100%;
+    display: block;
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 0;
+    list-style: none;
+    padding-left: 0;
+    width: 200px;
+}
+    
+.cssScrollHeaderContainer .disable { /* This is related to the carousel functionality. */
+    visibility: display;
+}
+
+.scrollHeaderContainer .viewport {
+/*    overflow: scroll;*/
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+}
+.scrollHeaderContainer .viewport::-webkit-scrollbar-track {
+    background-color: #191F27;
+}
+
+.scrollHeaderContainer .viewport::-webkit-scrollbar-thumb {
+    background-color: #191F27;
+    border-radius: 0px;
+}
+.scrollHeaderContainer .viewport::-webkit-scrollbar-track {
+    background-color: #191F27;
+}
+.scrollHeaderContainer .viewport::-webkit-scrollbar-corner {
+    background-color: #191F27;
+    height: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+.scrollHeaderContainer .viewport::-webkit-scrollbar-track-piece {
+    background-color: #191F27;
+    height: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollHeaderContainer .viewport::-webkit-scrollbar {
+/*    background-color: #191F27;*/
+    margin: 0;
+    padding: 0;
+}
+.cssTestnet {
+    color: yellow;
+}
+.cssCoinSelector.cssSelected.cssTestnet {
+    /*
+    font-size: 13px;
+    height: 16px;
+    width: 47px;
+    margin-top: 2px;
+    */
+    color: yellow !important;
+}

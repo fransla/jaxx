@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="421px" height="136px" viewBox="0 0 421 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>DAOlogo-gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DAOlogo-gray" transform="translate(0.000000, -21.000000)">
+            <g id="dao_gray" transform="translate(0.000000, 0.037669)">
+                <g id="etg" transform="translate(0.000000, 21.583511)" fill="#818284">
+                    <g id="rect-2-link">
+                        <rect id="rect-2" x="0" y="0" width="134.994261" height="134.896944"></rect>
+                    </g>
+                </g>
+                <text id="D" fill="#C5C6C8" font-family="Helvetica" font-size="145.658263" font-weight="normal">
+                    <tspan x="17.5532088" y="141">D</tspan>
+                </text>
+                <path d="M21.5990817,89.8499999 L66.9571532,89.8499999" id="Line" stroke="#979797" stroke-width="5.7"></path>
+            </g>
+            <g id="DAO" transform="translate(155.372221, 20.829424)" font-size="120" font-family="AvenirNext-Regular, Avenir Next" fill="#C5C6C8" font-weight="normal">
+                <text>
+                    <tspan x="0.521235973" y="120">DAO</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
